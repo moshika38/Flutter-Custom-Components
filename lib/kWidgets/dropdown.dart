@@ -21,6 +21,9 @@ class CoustomDropDownMenu extends StatefulWidget {
   final double? BoderSize;
   final double? BoderRadius;
 
+  final TextStyle? hintStyle;
+  final TextStyle? valueStyle;
+
   final double? iconSize;
   final Color? iconColor;
   final IconData? icon;
@@ -54,7 +57,8 @@ class CoustomDropDownMenu extends StatefulWidget {
     required this.options,
     this.focusBorderColor,
     this.focusBorderWidth,
-    required this.onChanged, // Callback function එක
+    required this.onChanged, 
+    this.hintStyle, this.valueStyle, 
   });
 
   @override
@@ -70,8 +74,7 @@ class Coustom_DropDownMenuState extends State<CoustomDropDownMenu> {
     return Column(
       children: [
         Container(
-          padding:
-              EdgeInsets.symmetric(horizontal: widget.contentPadding ?? 5),
+          padding: EdgeInsets.symmetric(horizontal: widget.contentPadding ?? 5),
           width: widget.width,
           height: widget.height,
           decoration: BoxDecoration(
@@ -94,13 +97,10 @@ class Coustom_DropDownMenuState extends State<CoustomDropDownMenu> {
                 isExpanded: true,
                 isDense: true,
                 hint: Text(
-                  selectedValue.isEmpty
-                      ? widget.HintText ?? ""
-                      : selectedValue,
-                  style: TextStyle(
+                  selectedValue.isEmpty ? widget.HintText ?? "" : selectedValue,
+                  style:widget.hintStyle?? TextStyle(
                     color: widget.HintTextColor ?? Colors.black,
-                    fontWeight:
-                        widget.HintTextFontWeight ?? FontWeight.normal,
+                    fontWeight: widget.HintTextFontWeight ?? FontWeight.normal,
                     fontSize: widget.HintTextSize,
                   ),
                 ),
@@ -109,7 +109,7 @@ class Coustom_DropDownMenuState extends State<CoustomDropDownMenu> {
                     value: value,
                     child: Text(
                       value,
-                      style: TextStyle(
+                      style:widget.valueStyle?? TextStyle(
                         color: widget.optionTextColor ?? Colors.black,
                         fontWeight:
                             widget.optionTextFontWeight ?? FontWeight.normal,
@@ -117,7 +117,7 @@ class Coustom_DropDownMenuState extends State<CoustomDropDownMenu> {
                       ),
                     ),
                   );
-                }).toList(), // Convert Iterable to List
+                }).toList(), 
                 onChanged: (newValue) {
                   setState(() {
                     selectedValue = newValue!;

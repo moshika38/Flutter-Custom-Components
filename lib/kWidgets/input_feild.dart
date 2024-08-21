@@ -19,11 +19,6 @@ class CoustomInputWidget extends StatelessWidget {
   final double? hintTextSize;
   final FontWeight? hintTextFontWeigth;
 
-  final String? lableText;
-  final Color? lableTextColor;
-  final double? lableTextSize;
-  final FontWeight? lableTextFontWeigth;
-
   final IconData? prefixIcon;
   final double? prefixIconSize;
   final Color? prefixIconColor;
@@ -39,9 +34,13 @@ class CoustomInputWidget extends StatelessWidget {
   final String? errMassege;
   final Color? errBorderColor;
 
+  final TextStyle? textStyle;
+
   final double? contentPaddingHorizontal;
 
   final TextEditingController controller;
+
+  final TextAlign? textAlign;
 
   const CoustomInputWidget({
     super.key,
@@ -56,10 +55,6 @@ class CoustomInputWidget extends StatelessWidget {
     this.hintTextColor,
     this.hintTextSize,
     this.hintTextFontWeigth,
-    this.lableText,
-    this.lableTextColor,
-    this.lableTextSize,
-    this.lableTextFontWeigth,
     this.prefixIcon,
     this.prefixIconSize,
     this.prefixIconColor,
@@ -73,6 +68,8 @@ class CoustomInputWidget extends StatelessWidget {
     this.errMassege,
     this.errBorderColor,
     required this.controller,
+    this.textStyle,
+    this.textAlign,
   });
 
   @override
@@ -80,7 +77,7 @@ class CoustomInputWidget extends StatelessWidget {
     return SizedBox(
       width: width,
       child: TextFormField(
-        textAlign: TextAlign.center,
+        textAlign: textAlign ?? TextAlign.left,
         controller: controller,
         validator: (value) {
           if (value!.isEmpty) {
@@ -88,11 +85,12 @@ class CoustomInputWidget extends StatelessWidget {
           }
           return null;
         },
-        style: TextStyle(
-          color: inputTextColor,
-          fontSize: inputTextSize,
-          fontWeight: inputTextFontWeigth,
-        ),
+        style: textStyle ??
+            TextStyle(
+              color: inputTextColor,
+              fontSize: inputTextSize,
+              fontWeight: inputTextFontWeigth,
+            ),
         decoration: InputDecoration(
           errorBorder: OutlineInputBorder(
               borderSide: BorderSide(
@@ -112,7 +110,7 @@ class CoustomInputWidget extends StatelessWidget {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(borderRadius ?? 10),
             borderSide: BorderSide(
-              color: focusBorderColor ?? Colors.deepPurple,
+              color: focusBorderColor ?? borderColor ?? Colors.black,
               width: borderSize ?? 1,
             ),
           ),
@@ -130,20 +128,13 @@ class CoustomInputWidget extends StatelessWidget {
             size: suffixIconSize,
             color: suffixIconColor,
           ),
-          label: Text(
-            lableText ?? "",
-            style: TextStyle(
-              color: lableTextColor,
-              fontSize: lableTextSize,
-              fontWeight: lableTextFontWeigth,
-            ),
-          ),
           hintText: hintText,
-          hintStyle: TextStyle(
-            color: hintTextColor,
-            fontSize: hintTextSize,
-            fontWeight: hintTextFontWeigth,
-          ),
+          hintStyle: textStyle ??
+              TextStyle(
+                color: hintTextColor,
+                fontSize: hintTextSize,
+                fontWeight: hintTextFontWeigth,
+              ),
         ),
       ),
     );

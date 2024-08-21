@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
-class k_CoustomBottomAppBar extends StatefulWidget {
+class CoustomBottomAppBar extends StatefulWidget {
   final Function(int) onTap;
   final Color? bgcolors;
   final Gradient? kMainHomeBtnColor;
 
-  const k_CoustomBottomAppBar({
+  const CoustomBottomAppBar({
     super.key,
-    required this.onTap, this.bgcolors, this.kMainHomeBtnColor,
+    required this.onTap, 
+    this.bgcolors, 
+    this.kMainHomeBtnColor,
   });
 
   @override
-  State<k_CoustomBottomAppBar> createState() => kCoustom_BottomAppBarState();
+  State<CoustomBottomAppBar> createState() => kCoustom_BottomAppBarState();
 }
 
 // ignore: camel_case_types
-class kCoustom_BottomAppBarState extends State<k_CoustomBottomAppBar> {
+class kCoustom_BottomAppBarState extends State<CoustomBottomAppBar> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -117,7 +119,7 @@ int _index = 1;
 ==============================================================
 
     Scaffold(
-      bottomNavigationBar: k_CoustomBottomAppBar(
+      bottomNavigationBar: CoustomBottomAppBar(
         onTap: _updateData,
       ),
       body: pages[_index],

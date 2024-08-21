@@ -19,6 +19,8 @@ class CoustomDatePicker extends StatefulWidget {
   final double? hintTextSize;
   final FontWeight? hintTextFontWeigth;
 
+  final TextStyle? allTextStyle;
+
   final String? lableText;
   final Color? lableTextColor;
   final double? lableTextSize;
@@ -73,6 +75,7 @@ class CoustomDatePicker extends StatefulWidget {
     this.errMassege,
     this.errBorderColor,
     required this.controller,
+    this.allTextStyle,
   });
 
   @override
@@ -107,11 +110,12 @@ class _CoustomDatePickerState extends State<CoustomDatePicker> {
           }
           return null;
         },
-        style: TextStyle(
-          color: widget.inputTextColor,
-          fontSize: widget.inputTextSize,
-          fontWeight: widget.inputTextFontWeigth,
-        ),
+        style: widget.allTextStyle ??
+            TextStyle(
+              color: widget.inputTextColor,
+              fontSize: widget.inputTextSize,
+              fontWeight: widget.inputTextFontWeigth,
+            ),
         decoration: InputDecoration(
           border: InputBorder.none,
           errorBorder: OutlineInputBorder(
@@ -153,22 +157,13 @@ class _CoustomDatePickerState extends State<CoustomDatePicker> {
             ),
             onPressed: () => _selectDate(context),
           ),
-          label: Text(
-            widget.lableText ?? "",
-            style: TextStyle(
-              color: widget.lableTextColor,
-              fontSize: widget.lableTextSize,
-              fontWeight: widget.lableTextFontWeigth,
-            ),
-          ),
-          
-          hintText:
-              widget.hintText ?? DateTime.now().toString().split(' ')[0],
-          hintStyle: TextStyle(
-            color: widget.hintTextColor ?? Colors.black,
-            fontSize: widget.hintTextSize ?? 15,
-            fontWeight: widget.hintTextFontWeigth,
-          ),
+          hintText: widget.hintText ?? DateTime.now().toString().split(' ')[0],
+          hintStyle: widget.allTextStyle ??
+              TextStyle(
+                color: widget.hintTextColor ?? Colors.black,
+                fontSize: widget.hintTextSize ?? 15,
+                fontWeight: widget.hintTextFontWeigth,
+              ),
         ),
       ),
     );
@@ -193,5 +188,15 @@ if (_formKey.currentState!.validate()) {
     print(inputdate);
 }
 ==========================================================
+
+// datetime is empty? get current date
+
+setState(() {
+  if (controller.text.isEmpty) {
+    controller.text = DateTime.now().toString().split(' ')[0];
+    print(controller.text);
+  }
+});
+
 
 */

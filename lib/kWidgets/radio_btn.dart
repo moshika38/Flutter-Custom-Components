@@ -11,6 +11,8 @@ class CoustomRadioButton extends StatefulWidget {
   final double? lableSize;
   final FontWeight? lableFontWeight;
 
+  final TextStyle? textStyle;
+
   final Color? radioButtonBorderColor;
 
   const CoustomRadioButton({
@@ -22,7 +24,7 @@ class CoustomRadioButton extends StatefulWidget {
     this.lableColor,
     this.lableSize,
     this.lableFontWeight,
-    this.radioButtonBorderColor,
+    this.radioButtonBorderColor, this.textStyle,
   });
 
   @override
@@ -52,7 +54,7 @@ class _CoustomRadioButtonState extends State<CoustomRadioButton> {
               activeColor: widget.activeColor,
               title: Text(
                 values,
-                style: TextStyle(
+                style:widget.textStyle?? TextStyle(
                   fontSize: widget.lableSize,
                   fontWeight: widget.lableFontWeight,
                   color: widget.activeColor,

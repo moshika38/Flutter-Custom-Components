@@ -39,6 +39,8 @@ class CoustomPasswordInput extends StatefulWidget {
   final String? errMassege;
   final Color? errBorderColor;
 
+  final TextStyle? textStyle;
+
   final double? contentPaddingHorizontal;
 
   final TextEditingController controller;
@@ -72,6 +74,7 @@ class CoustomPasswordInput extends StatefulWidget {
     this.errBorderColor,
     required this.controller,
     this.heigth,
+    this.textStyle,
   });
 
   @override
@@ -101,11 +104,12 @@ class _CoustomPasswordInputState extends State<CoustomPasswordInput> {
           }
           return null;
         },
-        style: TextStyle(
-          color: widget.inputTextColor,
-          fontSize: widget.inputTextSize,
-          fontWeight: widget.inputTextFontWeigth,
-        ),
+        style: widget.textStyle ??
+            TextStyle(
+              color: widget.inputTextColor,
+              fontSize: widget.inputTextSize,
+              fontWeight: widget.inputTextFontWeigth,
+            ),
         decoration: InputDecoration(
           errorBorder: OutlineInputBorder(
             borderSide: BorderSide(
@@ -160,18 +164,20 @@ class _CoustomPasswordInputState extends State<CoustomPasswordInput> {
           ),
           label: Text(
             widget.lableText ?? "",
-            style: TextStyle(
-              color: widget.lableTextColor,
-              fontSize: widget.lableTextSize,
-              fontWeight: widget.lableTextFontWeigth,
-            ),
+            style: widget.textStyle ??
+                TextStyle(
+                  color: widget.lableTextColor,
+                  fontSize: widget.lableTextSize,
+                  fontWeight: widget.lableTextFontWeigth,
+                ),
           ),
           hintText: widget.hintText,
-          hintStyle: TextStyle(
-            color: widget.hintTextColor,
-            fontSize: widget.hintTextSize,
-            fontWeight: widget.hintTextFontWeigth,
-          ),
+          hintStyle: widget.textStyle ??
+              TextStyle(
+                color: widget.hintTextColor,
+                fontSize: widget.hintTextSize,
+                fontWeight: widget.hintTextFontWeigth,
+              ),
         ),
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_coustom_widgets/kWidgets/popup_windwo.dart';
-
+import 'package:flutter_coustom_widgets/kWidgets/dropdown.dart';
+ 
 void main() {
   runApp(MyApp());
 }
@@ -15,19 +15,40 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  TextEditingController controller = TextEditingController();
+
+  String? selectionValue;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Popup Example'),
-      ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            CoustomPopupWindow().showPopup(context);
-          },
-          child: Text('Show Popup'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CoustomDropDownMenu(
+              HintText: "select ",
+              height: 50,
+              options: const ['male', 'female'],
+              onChanged: (value) {
+                setState(() {
+                  selectionValue = value;
+                });
+              },
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    print(selectionValue);
+                  });
+                },
+                child: Text("Click"))
+          ],
         ),
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
- 
+
 class CoustomCheckboxWidget extends StatefulWidget {
   final double? width;
   final double? heigth;
@@ -19,6 +19,8 @@ class CoustomCheckboxWidget extends StatefulWidget {
   final bool? rightSideLable;
   final double? leftLableSpace;
   final double? rightLableSpace;
+
+  final TextStyle? lableStyle;
 
   final Color? lableColor;
   final Color? lableErrColor;
@@ -50,6 +52,7 @@ class CoustomCheckboxWidget extends StatefulWidget {
     this.lableFontWeight,
     this.leftLableText,
     this.rightLableText,
+    this.lableStyle,
   });
 
   @override
@@ -57,7 +60,7 @@ class CoustomCheckboxWidget extends StatefulWidget {
 }
 
 class _CoustomCheckboxWidgetState extends State<CoustomCheckboxWidget> {
-  bool _isChecked = true;
+  bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -80,11 +83,11 @@ class _CoustomCheckboxWidgetState extends State<CoustomCheckboxWidget> {
         GestureDetector(
           onTap: () {
             setState(() {
-              widget.onChanged(_isChecked);
-              if (_isChecked == true) {
-                _isChecked = false;
+              widget.onChanged(isChecked);
+              if (isChecked == true) {
+                isChecked = false;
               } else {
-                _isChecked = true;
+                isChecked = true;
               }
             });
           },
@@ -99,7 +102,7 @@ class _CoustomCheckboxWidgetState extends State<CoustomCheckboxWidget> {
               ),
               color: widget.backGroundColor ?? const Color(0xFFFFFFFF),
             ),
-            child: !_isChecked
+            child: !isChecked
                 ? Center(
                     child: Icon(
                       Icons.done,
@@ -117,11 +120,12 @@ class _CoustomCheckboxWidgetState extends State<CoustomCheckboxWidget> {
           visible: widget.rightSideLable ?? false,
           child: Text(
             widget.rightLableText ?? "",
-            style: TextStyle(
-              fontSize: widget.lableFontSize,
-              fontWeight: widget.lableFontWeight,
-              color: widget.lableColor,
-            ),
+            style: widget.lableStyle ??
+                TextStyle(
+                  fontSize: widget.lableFontSize,
+                  fontWeight: widget.lableFontWeight,
+                  color: widget.lableColor,
+                ),
           ),
         ),
       ],
