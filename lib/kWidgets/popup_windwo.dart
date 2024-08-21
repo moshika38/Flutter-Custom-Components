@@ -31,7 +31,7 @@ class CoustomPopupWindow {
           title: Text(
             title ?? "",
           ),
-          content: content ?? Text('Click "Close" button to back'),
+          content: content ?? const Text('Click "Close" button to back'),
           actions: actionButtons ??
               [
                 TextButton(
