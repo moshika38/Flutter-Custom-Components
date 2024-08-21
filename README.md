@@ -1,16 +1,36 @@
-# flutter_coustom_widgets
 
-A new Flutter project.
+# Flutter Custom Components
 
-## Getting Started
+**Flutter Custom Components** is a collection of fully customized, low-code Flutter widgets and components designed to save time and simplify project development. These components are easy to integrate and offer extensive customization options, making them ideal for both beginners and experienced developers.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- **Fully Customizable:** Tailor components to meet specific design requirements with ease.
+- **Low-Code Integration:** Simplify your development process with minimal coding.
+- **Time-Saving:** Streamline your workflow with pre-built, ready-to-use components.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To use this package, add the following dependency to your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  git:
+      url: https://github.com/moshika38/Flutter-Custom-Components.git
+      ref: main
+```
+
+Then, run the following command:
+
+```bash
+flutter pub get
+```
+
+## Contributing
+
+Contributions are welcome! Please fork this repository and submit a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
