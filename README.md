@@ -9,23 +9,6 @@
 - **Low-Code Integration:** Simplify your development process with minimal coding.
 - **Time-Saving:** Streamline your workflow with pre-built, ready-to-use components.
 
-## Installation
-
-To use this package, add the following dependency to your `pubspec.yaml` file:
-
-```yaml
-dependencies:
-  git:
-      url: https://github.com/moshika38/Flutter-Custom-Components.git
-      ref: main
-```
-
-Then, run the following command:
-
-```bash
-flutter pub get
-```
-
 ## Contributing
 
 Contributions are welcome! Please fork this repository and submit a pull request with your changes.
