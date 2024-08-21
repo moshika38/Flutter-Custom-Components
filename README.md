@@ -33,7 +33,7 @@ flutter pub get
 
 ## Usage
 
-NavitateNavigate to the file; it contains the guidelines.
+Navigate to the file; it contains the guidelines.
 
 
 ## License
