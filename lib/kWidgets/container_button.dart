@@ -1,3 +1,5 @@
+library coustom_flutter_widgets;
+
 import 'package:flutter/material.dart';
 
 class CoustomButoon extends StatelessWidget {
@@ -41,7 +43,7 @@ class CoustomButoon extends StatelessWidget {
         height: heith ?? 50,
         decoration: BoxDecoration(
           gradient: gradient,
-          borderRadius: BorderRadiusDirectional.circular(borderRadius ?? 5),
+          borderRadius: BorderRadiusDirectional.circular(borderRadius ?? 8),
           color: bgColor ?? Colors.white,
           border: Border.all(
             width: borderWidth ?? 1,

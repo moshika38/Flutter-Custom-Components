@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+library coustom_flutter_widgets;
 
 import 'package:flutter/material.dart';
 
@@ -19,11 +19,6 @@ class CoustomPasswordInput extends StatefulWidget {
   final Color? hintTextColor;
   final double? hintTextSize;
   final FontWeight? hintTextFontWeigth;
-
-  final String? lableText;
-  final Color? lableTextColor;
-  final double? lableTextSize;
-  final FontWeight? lableTextFontWeigth;
 
   final IconData? prefixIcon;
   final double? prefixIconSize;
@@ -57,10 +52,6 @@ class CoustomPasswordInput extends StatefulWidget {
     this.hintTextColor,
     this.hintTextSize,
     this.hintTextFontWeigth,
-    this.lableText,
-    this.lableTextColor,
-    this.lableTextSize,
-    this.lableTextFontWeigth,
     this.prefixIcon,
     this.prefixIconSize,
     this.prefixIconColor,
@@ -122,16 +113,16 @@ class _CoustomPasswordInputState extends State<CoustomPasswordInput> {
               horizontal: widget.contentPaddingHorizontal ??
                   15), // Set content padding to zero
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(widget.borderRadius ?? 10),
+            borderRadius: BorderRadius.circular(widget.borderRadius ?? 8),
             borderSide: BorderSide(
               color: widget.borderColor ?? Colors.black,
               width: widget.borderSize ?? 1,
             ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(widget.borderRadius ?? 10),
+            borderRadius: BorderRadius.circular(widget.borderRadius ?? 8),
             borderSide: BorderSide(
-              color: widget.focusBorderColor ?? Colors.deepPurple,
+              color: widget.focusBorderColor??widget.borderColor ?? Colors.deepPurple,
               width: widget.borderSize ?? 1,
             ),
           ),
@@ -162,15 +153,7 @@ class _CoustomPasswordInputState extends State<CoustomPasswordInput> {
               color: widget.suffixIconColor,
             ),
           ),
-          label: Text(
-            widget.lableText ?? "",
-            style: widget.textStyle ??
-                TextStyle(
-                  color: widget.lableTextColor,
-                  fontSize: widget.lableTextSize,
-                  fontWeight: widget.lableTextFontWeigth,
-                ),
-          ),
+          
           hintText: widget.hintText,
           hintStyle: widget.textStyle ??
               TextStyle(

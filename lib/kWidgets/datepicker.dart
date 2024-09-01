@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+library coustom_flutter_widgets;
 
 import 'package:flutter/material.dart';
 
@@ -127,14 +127,14 @@ class _CoustomDatePickerState extends State<CoustomDatePicker> {
               vertical: widget.heigth ?? 00,
               horizontal: widget.contentPaddingHorizontal ?? 15),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(widget.borderRadius ?? 10),
+            borderRadius: BorderRadius.circular(widget.borderRadius ?? 8),
             borderSide: BorderSide(
               color: widget.borderColor ?? Colors.black,
               width: widget.borderSize ?? 1,
             ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(widget.borderRadius ?? 10),
+            borderRadius: BorderRadius.circular(widget.borderRadius ?? 8),
             borderSide: BorderSide(
               color: widget.focusBorderColor ?? Colors.deepPurple,
               width: widget.borderSize ?? 1,

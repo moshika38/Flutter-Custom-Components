@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+library coustom_flutter_widgets;
 
 import 'package:flutter/material.dart';
 
@@ -101,14 +101,14 @@ class CoustomInputWidget extends StatelessWidget {
               vertical: heigth ?? 00,
               horizontal: contentPaddingHorizontal ?? 15),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(borderRadius ?? 10),
+            borderRadius: BorderRadius.circular(borderRadius ?? 8),
             borderSide: BorderSide(
               color: borderColor ?? Colors.black,
               width: borderSize ?? 1,
             ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(borderRadius ?? 10),
+            borderRadius: BorderRadius.circular(borderRadius ?? 8),
             borderSide: BorderSide(
               color: focusBorderColor ?? borderColor ?? Colors.black,
               width: borderSize ?? 1,

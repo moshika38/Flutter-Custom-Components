@@ -1,3 +1,5 @@
+library coustom_flutter_widgets;
+
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types

@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+library coustom_flutter_widgets;
 import 'package:flutter/material.dart';
 
 class CoustomDropDownMenu extends StatefulWidget {
@@ -78,7 +78,7 @@ class Coustom_DropDownMenuState extends State<CoustomDropDownMenu> {
           width: widget.width,
           height: widget.height,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(widget.BoderRadius ?? 10),
+            borderRadius: BorderRadius.circular(widget.BoderRadius ?? 8),
             color: widget.BgColor ?? Colors.white,
             border: Border.all(
               color: widget.BoderColor ?? Colors.black,

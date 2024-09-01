@@ -1,5 +1,7 @@
+library coustom_flutter_widgets;
+
 import 'package:flutter/material.dart';
-// import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class CoustomPageView extends StatefulWidget {
   final List<Widget> listChild;
@@ -30,7 +32,6 @@ class CoustomPageView extends StatefulWidget {
   });
 
   @override
-  // ignore: library_private_types_in_public_api
   _CoustomPageViewState createState() => _CoustomPageViewState();
 }
 
@@ -48,9 +49,7 @@ class _CoustomPageViewState extends State<CoustomPageView> {
             alignment: widget.indicatorAlignment ?? Alignment.bottomCenter,
             child: Padding(
               padding: EdgeInsets.all(widget.indicatorPadding ?? 15),
-              /*
-
-               child: SmoothPageIndicator(
+              child: SmoothPageIndicator(
                 controller: widget.controller,
                 count: widget.pageCount.toInt(), // Number of pages
                 effect: WormEffect(
@@ -60,9 +59,7 @@ class _CoustomPageViewState extends State<CoustomPageView> {
                   dotWidth: widget.dotWidth ?? 10,
                   spacing: widget.dotSpaceing ?? 15,
                 ),
-              ), 
-              
-              */
+              ),
             ),
           ),
         ],
